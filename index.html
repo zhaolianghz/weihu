@@ -9,17 +9,25 @@
     <link rel="shortcut icon"
         href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/1200px-Flat_tick_icon.svg.png" />
 </head>
+<script>function refreshRem() {
+    var docEl = doc.documentElement;
+    var width = docEl.getBoundingClientRect().width;
+    var rem = width / 10;
+    docEl.style.fontSize = rem + 'px';
+    flexible.rem = window.rem = rem;
+}
+window.addEventListener('resize', refreshRem);
+</script>
 <style>
     body {
         box-sizing: border-box;
         margin: 0;
-
+        font-family:'Times New Roman', Times, serif;
     }
-
     .content {
         box-sizing: border-box;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         padding: 15px;
         display: flex;
         align-items: center;
@@ -30,10 +38,25 @@
         background-attachment: fixed;
         background-image: url('./background.jpg');
     }
-
+    @media screen and (min-width: 1400px) {
+        .content {
+        box-sizing: border-box;
+        width: 100vw;
+        height: 10vh;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: url('./background.jpg');
+    }
+    }
     table.imagetable {
         font-family: verdana, arial, sans-serif;
-        font-size: 25px;
+        font-size: rem;
         color: #333333;
         border-width: 1px;
         border-color: #999999;
@@ -52,25 +75,22 @@
     }
 
     table.imagetable td {
-        background: #dcddc0;
+        background: #b5cfd2;
         border-width: 1px;
         padding: 8px;
         border-style: solid;
         border-color: #999999;
     }
 </style>
-<script>
-      let doc = document.documentElement
-      let width = doc.clientWidth
-      let ratio = width / 375
-      let fontSize = 10 * ratio
-      if (fontSize > 20) fontSize = 20
-      doc.style.fontSize = fontSize + 'px'
-    </script>
+
 <body>
     <div class="content">
-        <div><a href="http://nyt.hubei.gov.cn/" target="_blank">湖北省农业农村厅</a>
-            <a href="http://scjg.hubei.gov.cn/" target="_blank">湖北省市场监督管理局</a></div>
+        <div style="flex: 1;">
+            <a href="http://nyt.hubei.gov.cn/" target="_blank">湖北省农业农村厅</a>
+            <a href="http://scjg.hubei.gov.cn/" target="_blank">湖北省市场监督管理局</a>
+            <a href="https://agri.hunan.gov.cn/" target="_blank">湖南省农业农村厅</a>
+            <a href="https://amr.hunan.gov.cn/" target="_blank">湖南省市场监督管理局</a>
+        </div>
         <table class="imagetable">
             <tr>
                 <th>备注</th>
@@ -162,13 +182,11 @@
     </tr>
     </table>
     <p style="
-        
         border-radius: 10px;
         border: 1px solid#b5cfd2;
         padding: 15px;
-        font-size: 25px;
-        background-color: #FFFFF0;
-      ">
+        font-size: 1rem;
+        background-color: #FFFFF0;">
         3、成员B：（1）具体负责鹤峰县农产品质量安全追溯大数据中心、咸丰县农产品质量安全追溯大数据中心、利川市农产品质量安全追溯大数据中心、石门县农产品质量智慧溯源平台、长阳县新型农业主体数字化智能平台5个网站的<strong>政策法规、行业动态、抽检公告、市场监督</strong>4个栏目的新闻发布，每周每个栏目各一篇新闻。其他栏目根据张慧丽老师要求不定时更新部分内容。
         （2）武陵山片区大数据中心网站<strong>农业行情栏目1篇/4周，农事预警栏目1篇/2周，行业动态栏目1篇/周</strong>，其他栏目根据张慧丽老师要求不定时更新部分内容。
         （3）每周四检查以上6个网站是否能正常运行。
@@ -176,5 +194,4 @@
     </p>
     </div>
 </body>
-
 </html>
